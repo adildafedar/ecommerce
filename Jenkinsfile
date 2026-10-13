@@ -24,7 +24,7 @@ pipeline {
         stage("Deployment") {
             steps {
                 bat "if not exist deployment mkdir deployment"
-                bat "copy index.html deployment\"
+                bat "copy index.html deployment/index.html"
                 echo "Website deployed to deployment folder"
             }
         }
