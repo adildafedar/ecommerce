@@ -2,30 +2,30 @@ pipeline {
     agent any
 
     stages {
-        stage("Build") {
+        stage('Build') {
             steps {
-                echo "Building E-Commerce Website"
-                bat "npm run build"
+                echo 'Building E-Commerce Website'
+                bat 'npm run build'
             }
         }
 
-        stage("Automated Testing") {
+        stage('Automated Testing') {
             steps {
-                bat "npm test"
+                bat 'npm test'
             }
         }
 
-        stage("Code Quality Check") {
+        stage('Code Quality Check') {
             steps {
-                bat "npm run lint"
+                bat 'npm run lint'
             }
         }
 
-        stage("Deployment") {
+        stage('Deployment') {
             steps {
-                bat "if not exist deployment mkdir deployment"
-                bat "copy index.html deployment/index.html"
-                echo "Website deployed to deployment folder"
+                bat 'if not exist deployment mkdir deployment'
+                bat 'copy index.html deployment\\index.html'
+                echo 'Website deployed to deployment folder'
             }
         }
     }
